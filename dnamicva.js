@@ -6,7 +6,7 @@ var i;
 for (i=0; i<= slots.length-1; i++ ) 
 	{ console.log(slots[i].getAdUnitPath() + " " + slots[i].getTargetingKeys()); }
 
-//set targeing keys
+//set targeing keys push to googletag push queue
 
 <script> 
 
