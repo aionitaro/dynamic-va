@@ -37,6 +37,21 @@ for(j=0; j<=slots.length-1; j++)
 	}}	
 	
 	
+// get the AdX CPM from json report and set the kv to an increased CPM by percentage
+for(j=0; j<=slots.length-1; j++) 
+	{if(slots[j].getAdUnitPath() !== null){
+		{ for(i=0; i<=json.length-1; i++) 
+			{
+			
+			if(json[i]['Ad unit'] == slots[j].getAdUnitPath()) 
+			{ console.log(slots[j].getAdUnitPath() + " has a total FR of  " + json[i]["Total fill rate"]);
+					var fillRate = parseFloat(json[i]["Total fill rate"]).toFixed(0);
+					var frCluster = Math.ceil(fillRate / 10) * 10;
+				slots[j].setTargeting("FR", frCluster);
+				 console.log("Set FR  Cluster to " + frCluster );
+				}}
+		}
+	}}	
 
 
  </script>
